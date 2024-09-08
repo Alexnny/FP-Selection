@@ -1,0 +1,328 @@
+/* Resetando margens, preenchimentos e estilos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    /* Remove marcadores de lista */
+    font-family: "Poppins", sans-serif;
+}
+
+/* Estilização geral do corpo da página */
+body {
+    background-color: #000;
+    /* Cor de fundo preta */
+    color: #fff;
+    /* Cor do texto branca */
+    font-size: 16px;
+    /* Tamanho da fonte padrão */
+    overflow: hidden;
+    /* Remove barras de rolagem */
+}
+
+/* Estilização do cabeçalho fixo na parte superior da página */
+header {
+    position: fixed;
+    /* Fixa o cabeçalho na parte superior */
+    width: 90%;
+    /* Define a largura do cabeçalho para 90% da largura da página */
+    left: 50%;
+    /* Posiciona o cabeçalho no centro horizontal */
+    transform: translateX(-50%);
+    /* Centraliza horizontalmente o cabeçalho */
+    display: grid;
+    /* Usa grid layout */
+    align-items: center;
+    /* Alinha itens verticalmente ao centro */
+    grid-template-columns: 1fr 600px;
+    /* Define duas colunas, uma flexível e uma fixa de 600px */
+    gap: 50px;
+    /* Espaço de 50px entre as colunas */
+    z-index: 2;
+    /* Define a ordem de empilhamento do cabeçalho */
+
+    img {
+        width: 250px;
+        /* Define a largura da imagem no cabeçalho */
+    }
+
+    nav {
+        ul {
+            display: grid;
+            /* Usa grid layout para a lista de navegação */
+            grid-template-columns: repeat(3, 200px);
+            /* Define três colunas de 200px cada */
+        }
+    }
+}
+
+/* Estilização da seção principal */
+section {
+    background-image: radial-gradient(#1667df, #97999b);
+    /* Gradiente radial de roxo */
+    height: 100vh;
+    /* Define a altura da seção como 100% da altura da janela de visualização */
+    position: relative;
+    /* Permite posicionamento absoluto dentro da seção */
+
+    .list {
+        width: 70vw;
+        /* Define a largura da lista como 70% da largura da janela de visualização */
+        height: 100%;
+        /* Define a altura da lista como 100% da altura do contêiner pai */
+        margin: auto;
+        /* Centraliza a lista horizontalmente */
+        position: relative;
+        /* Permite posicionamento absoluto dentro da lista */
+
+        .item {
+            position: absolute;
+            /* Permite o posicionamento absoluto dentro da lista */
+            inset: 0;
+            /* Define todos os quatro valores (topo, direita, fundo, esquerda) como 0 */
+            display: flex;
+            /* Usa flexbox para o layout interno dos itens */
+            align-items: center;
+            /* Alinha verticalmente os itens */
+            justify-content: center;
+            /* Alinha horizontalmente os itens */
+
+            .car-img {
+                position: absolute;
+                /* Permite o posicionamento absoluto da imagem do carro */
+                top: 50%;
+                /* Posiciona a imagem do carro verticalmente ao centro */
+                left: 1.3%;
+                /* Move a imagem do carro 1.3% para a esquerda */
+                transform: translateY(-50%);
+                /* Centraliza verticalmente a imagem do carro */
+                width: 60%;
+                /* Define a largura da imagem do carro como 60% do contêiner */
+                z-index: 1;
+                /* Garante que a imagem esteja visível sobre a linha */
+
+                img {
+                    width: 100%;
+                    /* Ajusta a imagem para preencher o contêiner */
+                    transform: rotate(-23deg);
+                    /* Rotaciona a imagem em -27 graus */
+                }
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    background-color: #2c2c2c;
+                    width: 100%;
+                    height: 100px;
+                    top: 150%;
+                    left: 50px;
+                    border-radius: 50%;
+                    filter: blur(50px);
+                }
+            }
+
+            .content {
+                position: absolute;
+                /* Permite o posicionamento absoluto do conteúdo */
+                right: 100px;
+                /* Posiciona o conteúdo 100px a partir da borda direita */
+                width: 70%;
+                /* Define a largura do conteúdo como 70% do contêiner */
+                height: 100%;
+                /* Define a altura do conteúdo como 100% da altura do contêiner pai */
+                display: flex;
+                /* Usa flexbox para o layout interno do conteúdo */
+                flex-direction: column;
+                /* Organiza os itens em uma coluna */
+                justify-content: center;
+                /* Alinha os itens ao final do contêiner */
+                align-items: end;
+                /* Alinha os itens ao final do contêiner horizontalmente */
+                gap: 20px;
+                /* Espaço de 20px entre os itens */
+
+                .car-information {
+                    font-weight: bold;
+                    /* Define o texto como negrito */
+                }
+
+                h2 {
+                    font-size: 4em;
+                    /* Define o tamanho da fonte do título como 4em */
+                    line-height: 1em;
+                    /* Define a altura da linha como 1em */
+                    font-family: "League Gothic", sans-serif;
+                }
+
+                .description {
+                    color: #d9d9d9;
+                    /* Define a cor do texto como cinza claro */
+                    font-size: 10px;
+                    /* Define o tamanho da fonte como 10px */
+                    text-align: right;
+                    /* Alinha o texto à direita */
+                    max-width: 400px;
+                    /* Define a largura máxima como 400px */
+                }
+
+                .information {
+                    border-radius: 30px;
+                    /* Define bordas arredondadas de 30px */
+                    height: 35px;
+                    /* Define a altura como 35px */
+                    width: 120px;
+                    /* Define a largura como 120px */
+                    text-transform: uppercase;
+                    /* Converte o texto para maiúsculas */
+                    border: 2px solid #791fd3;
+                    background-color: #beff1b;
+                    color: #000;
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-family: "League Gothic", sans-serif;
+                }
+            }
+        }
+    }
+}
+
+/* Estilização dos botões de navegação */
+.arrows {
+    width: 70vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    display: flex;
+    justify-content: space-between;
+
+    button:nth-child(1) {
+        img {
+            transform: scale(-1);
+            cursor: pointer;
+        }
+    }
+
+    button {
+        top: 60%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+
+        img {
+            width: 30px;
+            /* Define a largura das imagens dos botões como 30px */
+            margin-top: 4px;
+        }
+
+        &:hover {
+            background-color: #beff1b;
+        }
+    }
+}
+
+.indicators {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 15px;
+
+    .number {
+        font-size: 5em;
+        font-family: "League Gothic", sans-serif;
+    }
+
+    ul {
+        display: flex;
+        gap: 10px;
+
+        li {
+            width: 50px;
+            height: 5px;
+            background-color: #beff1b;
+            border-radius: 5px;
+            transition: 0.5s;
+        }
+
+        .active {
+            background-color: #fff;
+        }
+    }
+}
+section {
+    & .list {
+        --calculation: 1;
+
+        & .item {
+            /* Corrigido o calc */
+            transform: translateX(calc(100vw * var(--calculation)));
+            transition: 0.5s;
+            opacity: 0;
+
+            & .car-img {
+                & img {
+                    transform: rotate(0);
+                    transition: 0.5s;
+                    transition-delay: 0.3s;
+                }
+            }
+
+            & .content {
+
+                & .car-information,
+                h2,
+                .description,
+                .information {
+                    /* Corrigido o calc */
+                    transform: translateX(calc(200px * var(--calculation)));
+                    transition: 0.7s;
+                    transition-delay: 0.3s;
+                    opacity: 0;
+                }
+
+                & h2 {
+                    transition-delay: 0.5s;
+                }
+
+                & .description {
+                    transition-delay: 0.7s;
+                }
+
+                & .information {
+                    transition-delay: 0.9s;
+                }
+            }
+        }
+
+        & .active {
+            transform: translateX(0);
+            transition: 0.5s;
+            opacity: 1;
+
+            & .car-img {
+                & img {
+                    transform: rotate(-20deg);
+                    opacity: 1;
+                }
+            }
+
+            & .content {
+                & .car-information,
+                h2,
+                .description,
+                .information {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
